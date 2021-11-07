@@ -1,0 +1,68 @@
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="card border-0 shadow rounded-3 my-5">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Create Offert</h5>
+                            <!--Declaramos una variable de tamplate para obtener el formulario-->
+                            <form (ngSubmit)="onSubmit()" [formGroup]="offertform">
+                                    <div class="form-group">
+                                        <label for="titulo" class="form-label">Titulo</label>
+                                        <input type="text" class="form-control" formControlName="titulo" id="titulo" [ngClass]="{ 'is-invalid': submitted && f.titulo.errors }">
+                                        <div *ngIf="submitted && f.titulo.errors" class="invalid-feedback">
+                                            <div *ngIf="f.titulo.errors.required">Nombre es requerido</div>
+                                            <div *ngIf="f.titulo.errors.minlength">La longitud mínima es 3</div>
+                                            <div *ngIf="f.titulo.errors.maxlength">La longitud máxima es 20</div>                                             
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="descripcion" class="form-label">Descripcion</label>
+                                        <textarea type="text" class="form-control" id="descripcion" rows="3" formControlName="descripcion" id="descripcion" [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors }"></textarea>
+                                        <div *ngIf="submitted && f.descripcion.errors" class="invalid-feedback">
+                                            <div *ngIf="f.descripcion.errors.required">Nombre es requerido</div>
+                                            <div *ngIf="f.descripcion.errors.minlength">La longitud mínima es 3</div>
+                                            <div *ngIf="f.descripcion.errors.maxlength">La longitud máxima es 20</div>                                             
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="empresa" class="form-label">Empresa</label>
+                                        <input type="text" class="form-control" formControlName="empresa" id="descripcion" [ngClass]="{ 'is-invalid': submitted && f.empresa.errors }">
+                                        <div *ngIf="submitted && f.empresa.errors" class="invalid-feedback">
+                                            <div *ngIf="f.empresa.errors.required">La Empresa es requerido</div>
+                                            <div *ngIf="f.empresa.errors.minlength">La longitud mínima es 3</div>
+                                            <div *ngIf="f.empresa.errors.maxlength">La longitud máxima es 20</div>                                             
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="salario" class="form-label">Salario</label>
+                                        <input type="number" class="form-control"  id="salario" formControlName="salario" [ngClass]="{ 'is-invalid': submitted && f.salario.errors }">
+                                        <div *ngIf="submitted && f.salario.errors" class="invalid-feedback">
+                                            <div *ngIf="f.salario.errors.required">El salario es requerido</div>                                          
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ciudad" class="form-label">Ciudad</label>
+                                        <input type="text" class="form-control" formControlName="ciudad" id="ciudad" [ngClass]="{ 'is-invalid': submitted && f.ciudad.errors }">
+                                        <div *ngIf="submitted && f.ciudad.errors" class="invalid-feedback">
+                                            <div *ngIf="f.ciudad.errors.required">La ciudad es requerido</div>
+                                            <div *ngIf="f.ciudad.errors.minlength">La longitud mínima es 3</div>
+                                            <div *ngIf="f.ciudad.errors.maxlength">La longitud máxima es 20</div>                                             
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Correo</label>
+                                        <input type="email" class="form-control" id="email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                            <div *ngIf="f.email.errors.required">El correo es requerido</div>
+                                            <div *ngIf="f.email.errors.email">El correo es no válido</div>
+                                        </div>
+                                    </div>
+                                <button type="submit"  class="btn btn-primary float-end mt-5">Save</button>     
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>

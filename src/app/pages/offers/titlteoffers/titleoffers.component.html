@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <div class="card mb-3 text-center font-weight-bold">
+        <div class="card-header h4">Listado de Ofertas</div>
+        <div class="card-body">
+          <div id="table" class="table-editable">
+            <table class="table">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Link</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let offert of arrayTittleOffert">
+                    <th scope="row">{{ offert.id}}</th>
+                    <td>{{ offert.titulo}}</td>
+                    <td>
+                        <button (click)="this.goToViewDetail(offert.id)" class="btn btn-primary">Ver</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>    
+          </div>
+        </div>
+    </div>
+</div>
+
