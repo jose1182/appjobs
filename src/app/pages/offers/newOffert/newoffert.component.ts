@@ -30,12 +30,12 @@ export class NewOffertComponent implements OnInit {
       ngOnInit(){
           //Create a form group to bound form tempplate with validatros rules
           this.offertform = this.formBuilder.group({
-              titulo:['', [Validators.required,Validators.minLength(3), Validators.maxLength(20)]],
-              descripcion:['', [Validators.required,Validators.minLength(3), Validators.maxLength(200)]],
-              empresa:['', [Validators.required,Validators.minLength(3), Validators.maxLength(20)]],
+              titulo:['', [Validators.required,Validators.minLength(3), Validators.maxLength(100)]],
+              descripcion:['', [Validators.required,Validators.minLength(3), Validators.maxLength(300)]],
+              empresa:['', [Validators.required,Validators.minLength(3), Validators.maxLength(50)]],
               salario:['', [Validators.required]],
-              ciudad:['', [Validators.required,Validators.minLength(3), Validators.maxLength(20)]],
-              email:['',[Validators.required, Validators.email]],
+              ciudad:['', [Validators.required,Validators.minLength(3), Validators.maxLength(50)]],
+              email:['',[Validators.required, Validators.email, Validators.maxLength(50)]],
           });
       }
   

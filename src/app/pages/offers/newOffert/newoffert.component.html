@@ -13,16 +13,16 @@
                                         <div *ngIf="submitted && f.titulo.errors" class="invalid-feedback">
                                             <div *ngIf="f.titulo.errors.required">Nombre es requerido</div>
                                             <div *ngIf="f.titulo.errors.minlength">La longitud mínima es 3</div>
-                                            <div *ngIf="f.titulo.errors.maxlength">La longitud máxima es 20</div>                                             
+                                            <div *ngIf="f.titulo.errors.maxlength">La longitud máxima es 100</div>                                             
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="descripcion" class="form-label">Descripcion</label>
                                         <textarea type="text" class="form-control" id="descripcion" rows="3" formControlName="descripcion" id="descripcion" [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors }"></textarea>
                                         <div *ngIf="submitted && f.descripcion.errors" class="invalid-feedback">
-                                            <div *ngIf="f.descripcion.errors.required">Nombre es requerido</div>
+                                            <div *ngIf="f.descripcion.errors.required">La descripción es requerido</div>
                                             <div *ngIf="f.descripcion.errors.minlength">La longitud mínima es 3</div>
-                                            <div *ngIf="f.descripcion.errors.maxlength">La longitud máxima es 20</div>                                             
+                                            <div *ngIf="f.descripcion.errors.maxlength">La longitud máxima es 300</div>                                             
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -31,7 +31,7 @@
                                         <div *ngIf="submitted && f.empresa.errors" class="invalid-feedback">
                                             <div *ngIf="f.empresa.errors.required">La Empresa es requerido</div>
                                             <div *ngIf="f.empresa.errors.minlength">La longitud mínima es 3</div>
-                                            <div *ngIf="f.empresa.errors.maxlength">La longitud máxima es 20</div>                                             
+                                            <div *ngIf="f.empresa.errors.maxlength">La longitud máxima es 50</div>                                             
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -47,7 +47,7 @@
                                         <div *ngIf="submitted && f.ciudad.errors" class="invalid-feedback">
                                             <div *ngIf="f.ciudad.errors.required">La ciudad es requerido</div>
                                             <div *ngIf="f.ciudad.errors.minlength">La longitud mínima es 3</div>
-                                            <div *ngIf="f.ciudad.errors.maxlength">La longitud máxima es 20</div>                                             
+                                            <div *ngIf="f.ciudad.errors.maxlength">La longitud máxima es 50</div>                                             
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -56,6 +56,7 @@
                                         <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                                             <div *ngIf="f.email.errors.required">El correo es requerido</div>
                                             <div *ngIf="f.email.errors.email">El correo es no válido</div>
+                                            <div *ngIf="f.email.errors.maxlength">La longitud máxima es 50</div>  
                                         </div>
                                     </div>
                                 <button type="submit"  class="btn btn-primary float-end mt-5">Save</button>     
